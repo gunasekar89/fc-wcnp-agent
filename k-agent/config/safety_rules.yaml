@@ -1,0 +1,14 @@
+rules:
+  - name: protected-namespaces
+    description: Prevent deletion of critical namespaces
+    forbidden_resources:
+      - "delete namespace kube-system"
+      - "delete namespace kube-public"
+    require_multi_approval: true
+  - name: node-operations
+    description: Guard node level operations
+    forbidden_resources:
+      - "delete node"
+      - "cordon"
+      - "drain"
+    require_multi_approval: true

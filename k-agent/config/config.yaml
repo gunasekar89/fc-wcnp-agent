@@ -1,0 +1,17 @@
+agent_name: k-agent
+conversation_memory: 10
+dry_run: true
+default_namespace: default
+default_user: sre-bot
+rbac_roles:
+  - view
+  - monitor
+llm_personas:
+  - pragmatic
+  - analytical
+  - security-focused
+storage:
+  db_path: k-agent-data/agent.db
+  history_file: k-agent-data/history.json
+safety:
+  rules_file: safety_rules.yaml
